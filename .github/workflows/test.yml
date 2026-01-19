@@ -1,8 +1,15 @@
-name: Test
-on: workflow_dispatch
+name: Simple Email Step Workflow
+
+on:
+  workflow_dispatch:  # This lets you run it manually from the Actions tab
+
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: 23f2000188@ds.study.iitm.ac.in
         run: echo "Hello, world!"
