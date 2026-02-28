@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  simple-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Basic checks
+        run: |
+          echo "CI is running"
+          node --version

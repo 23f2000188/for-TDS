@@ -1,0 +1,30 @@
+name: Scrape and Sum Tables
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scrape-sum:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run scraper by 23f2000188@ds.study.iitm.ac.in
+        run: |
+          echo "Replace seeds.txt with the real Seed 1..Seed 10 URLs from your assignment before running this workflow."
+          node scripts/sumTables.js

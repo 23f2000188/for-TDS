@@ -1,0 +1,11 @@
+{
+  "name": "for-tds",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sum:tables": "node scripts/sumTables.js"
+  },
+  "dependencies": {
+    "playwright": "^1.51.1"
+  }
+}
